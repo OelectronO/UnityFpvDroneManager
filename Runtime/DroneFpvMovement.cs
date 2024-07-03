@@ -25,6 +25,7 @@ public class DroneFpvMovement : MonoBehaviour
 
     public void DroneReset()
     {
+        print("Drone Reset");
         transform.position += new Vector3(0, 5, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.velocity = Vector3.zero;
@@ -71,6 +72,6 @@ public class DroneFpvMovement : MonoBehaviour
 
 
 
-        print("Pitch : " + m_axisValuePitch + ", Roll : " + m_axisValueRoll + ", Yaw : " + m_axisValueYaw);
+        print("Pitch : " + m_axisValuePitch + ", Roll : " + m_axisValueRoll + ", Yaw : " + m_axisValueYaw+", Thruster : "+ m_axisValueThruster);
     }
 }
