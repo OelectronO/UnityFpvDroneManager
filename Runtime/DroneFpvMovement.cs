@@ -12,81 +12,65 @@ public class DroneFpvMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    [SerializeField] private float m_pich;
+    [SerializeField] private float m_pitch;
     [SerializeField] private float m_roll;
     [SerializeField] private float m_yaw;
     [SerializeField] private float m_thrusterSpeed;
 
 
-    //[SerializeField] private float m_forwardSpeed;
-    //[SerializeField] private float m_rotateSpeed;
-    //[SerializeField] private float m_upSpeed;
+    private float m_axisValuePitch = 0;
+    private float m_axisValueRoll = 0;
+    private float m_axisValueYaw = 0;
+    private float m_axisValueThruster = 0;
 
-    //[SerializeField] private GameObject m_forcezone;
-    // Start is called before the first frame update
-
-    private bool m_goForward = false;
-    private bool m_goBackward = false;
-    private bool m_goLeft = false;
-    private bool m_goRight = false;
-    private bool m_goUp = false;
-    private bool m_goDown = false;
-    private bool m_goreset = false;
-
-
-    private float m_axisValueForward = 0;
-    private float m_axisValueRight = 0;
-    private float m_axisValueRotate = 0;
-    private float m_axisValueUp = 0;
-
-    public void QuadReset()
+    public void DroneReset()
     {
         transform.position += new Vector3(0, 5, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.velocity = Vector3.zero;
-        m_axisValueForward = 0;
-        m_axisValueRight = 0;
-        m_axisValueRotate = 0;
-        m_axisValueUp = 0;
+        m_axisValuePitch = 0;
+        m_axisValueRoll = 0;
+        m_axisValueYaw = 0;
+        m_axisValueThruster = 0;
     }
 
-    public void ForwardANDBackward(float _value)
+    public void PitchInputValue(float _value)
     {
-        m_axisValueForward = _value;
+        m_axisValuePitch = _value;
     }
 
-    public void LeftANDRight(float _value)
+    public void RollInputValue(float _value)
     {
-        m_axisValueRight = _value;
+        m_axisValueRoll = _value;
     }
 
-    public void RotateAxis(float _value)
+    public void YawInputValue(float _value)
     {
-        m_axisValueRotate = _value;
+        m_axisValueYaw = _value;
     }
 
-    public void UpANDDown(float _value)
+    public void ThrusterInputValue(float _value)
     {
-        m_axisValueUp = _value;
+        m_axisValueThruster = _value;
     }
 
     private void Update()
     {
 
-        transform.Rotate(Vector3.right * Time.deltaTime * m_pich * m_axisValueForward); //pitch
+        transform.Rotate(Vector3.right * Time.deltaTime * m_pitch * m_axisValuePitch); //pitch
 
-        transform.Rotate(Vector3.forward * Time.deltaTime * m_roll * m_axisValueRight * -1); //roll
+        transform.Rotate(Vector3.forward * Time.deltaTime * m_roll * m_axisValueRoll * -1); //roll
 
-        transform.Rotate(Vector3.up * Time.deltaTime * m_yaw * m_axisValueRotate); //yaw
+        transform.Rotate(Vector3.up * Time.deltaTime * m_yaw * m_axisValueYaw); //yaw
 
 
-        if (m_axisValueUp > 0)
+        if (m_axisValueThruster > 0)
         {
-            rb.AddForce(transform.up * m_thrusterSpeed * m_axisValueUp); //thruster
+            rb.AddForce(transform.up * m_thrusterSpeed * m_axisValueThruster); //thruster
         }
 
 
 
-        print("Pitch : " + m_axisValueForward + ", Roll : " + m_axisValueRight + ", Yaw : " + m_axisValueRotate);
+        print("Pitch : " + m_axisValuePitch + ", Roll : " + m_axisValueRoll + ", Yaw : " + m_axisValueYaw);
     }
 }
