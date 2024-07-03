@@ -1,0 +1,19 @@
+{
+  "name": "be.mathysboutry.untydronefpvmanager",
+  "version": "0.0.1",
+  "displayName": "Unity Drone Fpv Manager",
+  "description": "unity drone fpv system",
+  "unity": "2022.3",
+  "dependencies": {
+ },
+ "keywords": [
+    "unity",
+    "drone",
+    "fpv"
+  ],
+  "author": {
+    "name": "Mathys",
+    "email": "unitoijezgezogijezhgiuezgoiezgnezelzfpezofy@example.com",
+    "url": "https://www.unity3d.com"
+  }
+}
