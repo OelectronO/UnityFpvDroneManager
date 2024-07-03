@@ -20,6 +20,7 @@ public class DroneFpvMovement : MonoBehaviour
 
     [SerializeField] private GameObject m_dronePostionReset;
 
+    private int m_cameraAngle = 25;
 
     public float m_axisValuePitch = 0;
     public float m_axisValueRoll = 0;
@@ -33,6 +34,25 @@ public class DroneFpvMovement : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+        CameraChangeAngle();
+    }
+
+    private void CameraChangeAngle()
+    {
+        transform.GetChild(0).rotation = Quaternion.Euler((m_cameraAngle*-1), 0, 0);
+        print("Angle de la camera : "+m_cameraAngle);
+    }
+
+    public void AddAngle()
+    {
+        m_cameraAngle += 1;
+        CameraChangeAngle();
+    }
+
+    public void RemoveAngle()
+    {
+        m_cameraAngle -= 1;
+        CameraChangeAngle();
     }
 
     public void PitchInputValue(float _value)
