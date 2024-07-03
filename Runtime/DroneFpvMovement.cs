@@ -18,7 +18,7 @@ public class DroneFpvMovement : MonoBehaviour
     [SerializeField] private float m_yaw;
     [SerializeField] private float m_thrusterSpeed;
 
-    [SerializeField] private Transform m_dronePostionReset;
+    [SerializeField] private GameObject m_dronePostionReset;
 
 
     public float m_axisValuePitch = 0;
@@ -29,7 +29,7 @@ public class DroneFpvMovement : MonoBehaviour
     public void DroneReset()
     {
         print("Drone Reset");
-        transform.position = m_dronePostionReset.position;
+        transform.position = m_dronePostionReset.transform.position;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;

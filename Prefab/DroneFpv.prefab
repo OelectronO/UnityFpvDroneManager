@@ -55,7 +55,7 @@ MonoBehaviour:
   m_roll: 180
   m_yaw: 90
   m_thrusterSpeed: 12
-  m_dronePostionReset: {fileID: 4717236242008794560, guid: 365c55b7796bc9e46822de5597373961,
+  m_dronePostionReset: {fileID: 7909229186533098554, guid: 365c55b7796bc9e46822de5597373961,
     type: 3}
   m_axisValuePitch: 0
   m_axisValueRoll: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4262436abf2280f45a31b3fec8601fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_input: {fileID: 0}
+  m_input: {fileID: 2458272188752194222, guid: 914f0aa452013f147a854ee5a6179fd9, type: 3}
   m_isInput:
     m_currentValue: 0
     m_onValueChanged:
@@ -196,7 +196,7 @@ Rigidbody:
   m_GameObject: {fileID: 4341551355450728940}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.55
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -212,7 +212,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!33 &6629863410336960413
 MeshFilter:
