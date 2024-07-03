@@ -5,6 +5,7 @@
   "description": "unity drone fpv system",
   "unity": "2022.3",
   "dependencies": {
+	  "be.mathysboutry.untyinputmanager": "https://github.com/OelectronO/UnityInputManager.git"
  },
  "keywords": [
     "unity",

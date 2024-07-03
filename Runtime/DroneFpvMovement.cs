@@ -17,6 +17,8 @@ public class DroneFpvMovement : MonoBehaviour
     [SerializeField] private float m_yaw;
     [SerializeField] private float m_thrusterSpeed;
 
+    [SerializeField] private Transform m_dronePostionReset;
+
 
     public float m_axisValuePitch = 0;
     public float m_axisValueRoll = 0;
@@ -26,13 +28,10 @@ public class DroneFpvMovement : MonoBehaviour
     public void DroneReset()
     {
         print("Drone Reset");
-        transform.position += new Vector3(0, 5, 0);
+        transform.position = m_dronePostionReset.position;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.velocity = Vector3.zero;
-        m_axisValuePitch = 0;
-        m_axisValueRoll = 0;
-        m_axisValueYaw = 0;
-        m_axisValueThruster = 0;
+        rb.angularVelocity = Vector3.zero;
     }
 
     public void PitchInputValue(float _value)
