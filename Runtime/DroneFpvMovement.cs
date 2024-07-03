@@ -29,7 +29,7 @@ public class DroneFpvMovement : MonoBehaviour
     public void DroneReset()
     {
         print("Drone Reset");
-        transform.position = new Vector3(m_dronePostionReset.transform.position.x, m_dronePostionReset.transform.position.y, m_dronePostionReset.transform.position.z);
+        transform.position = m_dronePostionReset.transform.position;
         transform.rotation = Quaternion.Euler(0, 0, 0);
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
