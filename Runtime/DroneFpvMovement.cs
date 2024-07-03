@@ -10,6 +10,7 @@ public class DroneFpvMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        DroneReset();
     }
 
     [SerializeField] private float m_pitch;
