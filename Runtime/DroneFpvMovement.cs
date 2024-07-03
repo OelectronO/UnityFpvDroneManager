@@ -18,10 +18,10 @@ public class DroneFpvMovement : MonoBehaviour
     [SerializeField] private float m_thrusterSpeed;
 
 
-    private float m_axisValuePitch = 0;
-    private float m_axisValueRoll = 0;
-    private float m_axisValueYaw = 0;
-    private float m_axisValueThruster = 0;
+    public float m_axisValuePitch = 0;
+    public float m_axisValueRoll = 0;
+    public float m_axisValueYaw = 0;
+    public float m_axisValueThruster = 0;
 
     public void DroneReset()
     {
@@ -69,9 +69,5 @@ public class DroneFpvMovement : MonoBehaviour
         {
             rb.AddForce(transform.up * m_thrusterSpeed * m_axisValueThruster); //thruster
         }
-
-
-
-        print("Pitch : " + m_axisValuePitch + ", Roll : " + m_axisValueRoll + ", Yaw : " + m_axisValueYaw+", Thruster : "+ m_axisValueThruster);
     }
 }
