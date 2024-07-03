@@ -128,6 +128,9 @@ MonoBehaviour:
     m_currentValue: 0
     m_onValueChanged:
       m_PersistentCalls:
+        m_Calls: []
+    m_onTrue:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 55424111375870170}
           m_TargetAssemblyTypeName: DroneFpvMovement, be.mathysboutry.untydronefpvmanager.Runtime
@@ -141,9 +144,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    m_onTrue:
-      m_PersistentCalls:
-        m_Calls: []
     m_onFalse:
       m_PersistentCalls:
         m_Calls: []
